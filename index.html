@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>?????????????????????</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Surprise Girassol</title>
+    <!-- CORRIGIDO -->
+    <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
@@ -17,7 +18,8 @@
         <section class="fullscreen-section cover-section">
             <div class="intro-content">
                 <p id="initial-message"></p>
-                <img id="dostoievski-image" src="images/dostoievski.jpg" alt="Citação de Dostoiévski">
+                <!-- CORRIGIDO -->
+                <img id="dostoievski-image" src="./images/dostoievski.jpg" alt="Citação de Dostoiévski">
             </div>
             <div class="scroll-down-prompt">
                 <span>Role para baixo</span>
@@ -28,7 +30,8 @@
         <!-- Seção 2: Rodrigo Alarcon -->
         <section class="fullscreen-section music-section alarcon">
             <div class="content-wrapper">
-                <img class="album-cover" src="images/alarcon.png" alt="Capa do álbum de Rodrigo Alarcon">
+                <!-- CORRIGIDO -->
+                <img class="album-cover" src="./images/alarcon.png" alt="Capa do álbum de Rodrigo Alarcon">
                 <div class="text-and-player">
                     <blockquote class="typewriter">Não consigo tirar da minha cabeça esses olhos de nunca vi tão perto, a ponto de bater os cílios no meu... E nesse sorriso entreaberto eu já não sei se estou errado ou certo em cultivar esse bem querer.</blockquote>
                     <div class="audio-player" data-audio-id="audio-alarcon">
@@ -42,7 +45,8 @@
         <!-- Seção 3: Martinho da Vila -->
         <section class="fullscreen-section music-section martinho reverse">
             <div class="content-wrapper">
-                <img class="album-cover" src="images/martinho.png" alt="Capa do álbum de Martinho da Vila">
+                <!-- CORRIGIDO -->
+                <img class="album-cover" src="./images/martinho.png" alt="Capa do álbum de Martinho da Vila">
                 <div class="text-and-player">
                     <blockquote class="typewriter">Pretendo também me embrenhar no emaranhado dos seus cabelos, me deixe te trazer num dengo, pra num cafuné fazer os meus apelos. Eu quero ser exorcizado pela água benta desse olhar infindo, hipnotizado pelas retinas desses olhos lindos.</blockquote>
                     <div class="audio-player" data-audio-id="audio-martinho">
@@ -56,7 +60,8 @@
         <!-- Seção 4: Caetano Veloso -->
         <section class="fullscreen-section music-section caetano">
             <div class="content-wrapper">
-                <img class="album-cover" src="images/caetano.jpg" alt="Capa do álbum de Caetano Veloso">
+                <!-- CORRIGIDO -->
+                <img class="album-cover" src="./images/caetano.jpg" alt="Capa do álbum de Caetano Veloso">
                 <div class="text-and-player">
                     <blockquote class="typewriter">Gosto muito de te ver, leãozinho... Caminhando sob o sol, Gosto muito de você. O meu coração tão só.. leãozinho, mas basta eu encontrar você no caminho e meu coração tão sol.</blockquote>
                     <div class="audio-player" data-audio-id="audio-caetano">
@@ -70,7 +75,8 @@
         <!-- Seção 5: Terno Rei -->
         <section class="fullscreen-section music-section terno-rei reverse">
             <div class="content-wrapper">
-                <img class="album-cover" src="images/terno-rei.jpg" alt="Capa do álbum de Terno Rei">
+                <!-- CORRIGIDO -->
+                <img class="album-cover" src="./images/terno-rei.jpg" alt="Capa do álbum de Terno Rei">
                 <div class="text-and-player">
                     <blockquote class="typewriter">Eu quero me jogar nesse azul, no infinito desses braços — porque assim me sinto livre, aqui me sinto inteiro.</blockquote>
                     <div class="audio-player" data-audio-id="audio-terno-rei">
@@ -87,18 +93,19 @@
                 <p class="invite-text">Me daria o prazer de ter sua companhia em um passeio despretensioso acompanhado talvez de uma bebida, uma comida japonesa ou quem sabe um pastel de camarão com uma trilha sonora de uma banda, um cover ou o que lhe for mais agradável aos ouvidos?</p>
                 <div class="button-container">
                     <button id="yes-btn" class="invite-btn">SIM</button>
-                    <button id="no-btn" class="invite-btn">Hoje não, faró</button>
+                    <button id="no-btn" class="invite-btn">Hoje não, fará</button>
                 </div>
             </div>
         </section>
     </main>
 
-    <audio id="audio-alarcon" src="audio/alarcon.mp3" preload="metadata"></audio>
-    <audio id="audio-martinho" src="audio/martinho.mp3" preload="metadata"></audio>
-    <audio id="audio-caetano" src="audio/caetano.mp3" preload="metadata"></audio>
-    <audio id="audio-terno-rei" src="audio/terno-rei.mp3" preload="metadata"></audio>
+    <!-- CORRIGIDO -->
+    <audio id="audio-alarcon" src="./audio/alarcon.mp3" preload="metadata"></audio>
+    <audio id="audio-martinho" src="./audio/martinho.mp3" preload="metadata"></audio>
+    <audio id="audio-caetano" src="./audio/caetano.mp3" preload="metadata"></audio>
+    <audio id="audio-terno-rei" src="./audio/terno-rei.mp3" preload="metadata"></audio>
 
-     <!-- Modal para o botão NÃO -->
+    <!-- Modal para o botão NÃO -->
     <div id="apology-modal" class="modal-overlay">
         <div class="modal-content">
             <p>"Tudo bem, espero que não tenha causado desconforto com o convite e o possível exagero na demonstração de interesse, sou meio Cazuza como disse o Arthur."</p>
@@ -106,7 +113,7 @@
         </div>
     </div>
     
-    <!-- NOVO Modal para o botão SIM -->
+    <!-- Modal para o botão SIM -->
     <div id="yes-modal" class="modal-overlay">
         <div class="modal-content">
             <p>O CONTATO VOCÊ JÁ TEM, SÓ IR LÁ ME DAR A BOA NOTÍCIA (>.<)</p>
@@ -114,6 +121,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- CORRIGIDO -->
+    <script src="./script.js"></script>
 </body>
 </html>
