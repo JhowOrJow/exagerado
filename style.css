@@ -1,0 +1,60 @@
+* { box-sizing: border-box; }
+
+body { font-family: 'Montserrat', sans-serif; background-color: #1a1a1a; color: #f0f0f0; margin: 0; }
+
+.scroll-container { width: 100vw; height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; }
+
+.fullscreen-section { width: 100%; height: 100vh; scroll-snap-align: start; display: flex; justify-content: center; align-items: center; position: relative; transition: background 1s ease; }
+
+/* --- GRADIENTES ATUALIZADOS --- */
+.cover-section { background: linear-gradient(175deg, #4a4a4a, #1a1a1a); } /* NOVO: Gradiente cinza vintage */
+.music-section.alarcon { background: linear-gradient(175deg, #4d1a21, #1a1a1a); }
+.music-section.martinho { background: linear-gradient(175deg, #0d3b66, #1a1a1a); }
+.music-section.caetano { background: linear-gradient(175deg, #e77f4b, #1a1a1a); }
+.music-section.terno-rei { background: linear-gradient(175deg, #3c2a4d, #1a1a1a); }
+
+/* --- Abertura Animada --- */
+.cover-section .intro-content { text-align: center; }
+
+#initial-message { font-family: 'Lora', serif; font-size: 2em; max-width: 60ch; line-height: 1.6; margin-bottom: 40px; }
+
+#dostoievski-image { max-width: 90%; max-height: 70vh; object-fit: contain; border-radius: 12px; opacity: 0; transition: opacity 2s ease-in-out; }
+#dostoievski-image.visible { opacity: 1; }
+
+/* --- "ROLE PARA BAIXO" MAIS EVIDENTE --- */
+.scroll-down-prompt { position: absolute; bottom: 30px; color: rgba(255, 255, 255, 0.8); /* Cor mais clara */ text-align: center; opacity: 0; transition: opacity 1s ease 1s; }
+.scroll-down-prompt.visible { opacity: 1; }
+.scroll-down-prompt span { font-size: 1.1em; /* Fonte maior */ font-weight: 500; /* Mais encorpada */ }
+.scroll-down-prompt .arrow { width: 24px; /* Maior */ height: 24px; /* Maior */ border: 3px solid rgba(255, 255, 255, 0.8); /* Mais grosso e claro */ border-top: none; border-left: none; transform: rotate(45deg); margin: 15px auto; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { transform: rotate(45deg) scale(1); opacity: 0.5; } 50% { transform: rotate(45deg) scale(1.2); opacity: 1; } 100% { transform: rotate(45deg) scale(1); opacity: 0.5; } }
+
+/* Efeito de digitação e cursor */
+.typewriter { display: inline; }
+.typewriter.typing::after { content: '|'; animation: blink 1s step-end infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Seções de Música */
+.music-section .content-wrapper { display: flex; align-items: center; gap: 60px; padding: 40px; max-width: 1200px; }
+.music-section.reverse .content-wrapper { flex-direction: row-reverse; }
+
+.album-cover { width: 350px; height: 350px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); object-fit: cover; flex-shrink: 0; }
+.text-and-player { text-align: left; }
+blockquote { font-family: 'Lora', serif; font-style: italic; font-size: 2em; margin: 0 0 30px 0; padding-left: 20px; border-left: 3px solid rgba(255, 255, 255, 0.5); min-height: 100px; }
+
+/* Player de Áudio */
+.audio-player { display: flex; align-items: center; gap: 20px; background: rgba(0, 0, 0, 0.2); padding: 15px 25px; border-radius: 50px; width: fit-content; }
+.play-pause-btn { width: 60px; height: 60px; background: #1DB954; border-radius: 50%; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: background-color 0.3s ease; }
+.play-pause-btn:hover { background-color: #1ed760; }
+.play-pause-btn::before { content: ''; display: block; width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 20px solid white; margin-left: 5px; }
+.play-pause-btn.playing::before { content: ''; display: block; width: 18px; height: 20px; border: none; border-left: 6px solid white; border-right: 6px solid white; margin: 0; }
+.song-info { text-align: left; }
+.song-title { font-size: 1.2em; font-weight: bold; margin: 0; }
+.song-artist { font-size: 0.9em; color: #b3b3b3; margin: 0; }
+
+@media (max-width: 768px) {
+    #initial-message { font-size: 1.5em; }
+    .music-section .content-wrapper, .music-section.reverse .content-wrapper { flex-direction: column; text-align: center; }
+    .album-cover { width: 250px; height: 250px; }
+    blockquote { font-size: 1.5em; border-left: none; padding-left: 0; text-align: center; }
+    .text-and-player { display: flex; flex-direction: column; align-items: center; }
+}
