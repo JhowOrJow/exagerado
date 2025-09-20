@@ -6,37 +6,32 @@ body { font-family: 'Montserrat', sans-serif; background-color: #1a1a1a; color: 
 
 .fullscreen-section { width: 100%; height: 100vh; scroll-snap-align: start; display: flex; justify-content: center; align-items: center; position: relative; transition: background 1s ease; }
 
-/* --- GRADIENTES ATUALIZADOS --- */
-.cover-section { background: linear-gradient(175deg, #4a4a4a, #1a1a1a); } /* NOVO: Gradiente cinza vintage */
+/* Gradientes */
+.cover-section { background: linear-gradient(175deg, #4a4a4a, #1a1a1a); }
 .music-section.alarcon { background: linear-gradient(175deg, #4d1a21, #1a1a1a); }
 .music-section.martinho { background: linear-gradient(175deg, #0d3b66, #1a1a1a); }
 .music-section.caetano { background: linear-gradient(175deg, #e77f4b, #1a1a1a); }
 .music-section.terno-rei { background: linear-gradient(175deg, #3c2a4d, #1a1a1a); }
 
-/* --- Abertura Animada --- */
+/* Abertura Animada */
 .cover-section .intro-content { text-align: center; }
-
 #initial-message { font-family: 'Lora', serif; font-size: 2em; max-width: 60ch; line-height: 1.6; margin-bottom: 40px; }
-
 #dostoievski-image { max-width: 90%; max-height: 70vh; object-fit: contain; border-radius: 12px; opacity: 0; transition: opacity 2s ease-in-out; }
 #dostoievski-image.visible { opacity: 1; }
-
-/* --- "ROLE PARA BAIXO" MAIS EVIDENTE --- */
-.scroll-down-prompt { position: absolute; bottom: 30px; color: rgba(255, 255, 255, 0.8); /* Cor mais clara */ text-align: center; opacity: 0; transition: opacity 1s ease 1s; }
+.scroll-down-prompt { position: absolute; bottom: 30px; color: rgba(255, 255, 255, 0.8); text-align: center; opacity: 0; transition: opacity 1s ease 1s; }
 .scroll-down-prompt.visible { opacity: 1; }
-.scroll-down-prompt span { font-size: 1.1em; /* Fonte maior */ font-weight: 500; /* Mais encorpada */ }
-.scroll-down-prompt .arrow { width: 24px; /* Maior */ height: 24px; /* Maior */ border: 3px solid rgba(255, 255, 255, 0.8); /* Mais grosso e claro */ border-top: none; border-left: none; transform: rotate(45deg); margin: 15px auto; animation: pulse 2s infinite; }
-@keyframes pulse { 0% { transform: rotate(45deg) scale(1); opacity: 0.5; } 50% { transform: rotate(45deg) scale(1.2); opacity: 1; } 100% { transform: rotate(45deg) scale(1); opacity: 0.5; } }
+.scroll-down-prompt span { font-size: 1.1em; font-weight: 500; }
+.scroll-down-prompt .arrow { width: 24px; height: 24px; border: 3px solid rgba(255, 255, 255, 0.8); border-top: none; border-left: none; transform: rotate(45deg); margin: 15px auto; animation: pulse 2s infinite; }
 
 /* Efeito de digitação e cursor */
 .typewriter { display: inline; }
 .typewriter.typing::after { content: '|'; animation: blink 1s step-end infinite; }
 @keyframes blink { 50% { opacity: 0; } }
+@keyframes pulse { 0% { transform: rotate(45deg) scale(1); opacity: 0.5; } 50% { transform: rotate(45deg) scale(1.2); opacity: 1; } 100% { transform: rotate(45deg) scale(1); opacity: 0.5; } }
 
 /* Seções de Música */
 .music-section .content-wrapper { display: flex; align-items: center; gap: 60px; padding: 40px; max-width: 1200px; }
 .music-section.reverse .content-wrapper { flex-direction: row-reverse; }
-
 .album-cover { width: 350px; height: 350px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); object-fit: cover; flex-shrink: 0; }
 .text-and-player { text-align: left; }
 blockquote { font-family: 'Lora', serif; font-style: italic; font-size: 2em; margin: 0 0 30px 0; padding-left: 20px; border-left: 3px solid rgba(255, 255, 255, 0.5); min-height: 100px; }
@@ -51,10 +46,51 @@ blockquote { font-family: 'Lora', serif; font-style: italic; font-size: 2em; mar
 .song-title { font-size: 1.2em; font-weight: bold; margin: 0; }
 .song-artist { font-size: 0.9em; color: #b3b3b3; margin: 0; }
 
+/* Seção de Convite */
+.invite-section { background: linear-gradient(175deg, #2c1a4d, #1a1a1a); flex-direction: column; text-align: center; }
+.invite-content { max-width: 800px; position: relative; padding: 20px; }
+.invite-text { font-family: 'Lora', serif; font-size: 2.2em; line-height: 1.6; margin-bottom: 50px; }
+.button-container { display: flex; justify-content: center; gap: 30px; align-items: center; position: relative; height: 100px; width: 100%; }
+.invite-btn { padding: 15px 40px; font-size: 1.2em; font-weight: bold; border: none; border-radius: 50px; cursor: pointer; transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease; }
+.invite-btn:hover { transform: scale(1.05); }
+#yes-btn { background-color: #1DB954; color: white; }
+#yes-btn:hover { background-color: #1ed760; }
+#no-btn { background-color: transparent; color: #b3b3b3; border: 2px solid #b3b3b3; }
+#no-btn:hover { background-color: #b3b3b3; color: #1a1a1a; }
+#no-btn.fleeing { position: absolute; transition: top 0.4s ease-out, left 0.4s ease-out; }
+
+/* Modal/Pop-up */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; justify-content: center; align-items: center; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.modal-overlay.visible { opacity: 1; pointer-events: all; }
+.modal-content { background: #282828; padding: 40px; border-radius: 12px; max-width: 500px; text-align: center; transform: scale(0.95); transition: transform 0.3s ease; }
+.modal-overlay.visible .modal-content { transform: scale(1); }
+.modal-content p { font-family: 'Lora', serif; font-size: 1.2em; line-height: 1.6; margin: 0 0 30px 0; }
+
+/* --- BOTÕES DO MODAL CORRIGIDOS --- */
+.close-modal-btn {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    background-color: #1DB954;
+    color: white;
+}
+.close-modal-btn:hover {
+    transform: scale(1.05);
+    background-color: #1ed760;
+}
+
 @media (max-width: 768px) {
     #initial-message { font-size: 1.5em; }
     .music-section .content-wrapper, .music-section.reverse .content-wrapper { flex-direction: column; text-align: center; }
     .album-cover { width: 250px; height: 250px; }
     blockquote { font-size: 1.5em; border-left: none; padding-left: 0; text-align: center; }
     .text-and-player { display: flex; flex-direction: column; align-items: center; }
+    .invite-text { font-size: 1.6em; }
+    .button-container { flex-direction: column; gap: 20px; align-items: center; }
+    .invite-btn { width: 80%; }
+    #no-btn.fleeing { width: 80%; }
 }

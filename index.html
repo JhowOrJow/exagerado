@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>??????????</title>
+    <title>?????????????????????</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +58,7 @@
             <div class="content-wrapper">
                 <img class="album-cover" src="images/caetano.jpg" alt="Capa do álbum de Caetano Veloso">
                 <div class="text-and-player">
-                    <blockquote class="typewriter">Gosto muito de te ver, leãozinho... Caminhando sob o sol... O meu coração tão só.. leãozinho, mas basta eu encontrar você no caminho e meu coração tão sol.</blockquote>
+                    <blockquote class="typewriter">Gosto muito de te ver, leãozinho... Caminhando sob o sol, Gosto muito de você. O meu coração tão só.. leãozinho, mas basta eu encontrar você no caminho e meu coração tão sol.</blockquote>
                     <div class="audio-player" data-audio-id="audio-caetano">
                         <button class="play-pause-btn"></button>
                         <div class="song-info"><p class="song-title">Leãozinho</p><p class="song-artist">Caetano Veloso</p></div>
@@ -72,13 +72,22 @@
             <div class="content-wrapper">
                 <img class="album-cover" src="images/terno-rei.jpg" alt="Capa do álbum de Terno Rei">
                 <div class="text-and-player">
-                    <blockquote class="typewriter">Eu quero me jogar nesse azul, no infinito desses braços — porque assim me sinto livre, aqui me sinto inteiro.
-Oi... como vai.. você? 
-Quando é que foi ficar.. tão linda?</blockquote>
+                    <blockquote class="typewriter">Eu quero me jogar nesse azul, no infinito desses braços — porque assim me sinto livre, aqui me sinto inteiro.</blockquote>
                     <div class="audio-player" data-audio-id="audio-terno-rei">
                         <button class="play-pause-btn"></button>
                         <div class="song-info"><p class="song-title">Yoko</p><p class="song-artist">Terno Rei</p></div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 6: O Convite -->
+        <section class="fullscreen-section invite-section">
+            <div class="invite-content">
+                <p class="invite-text">Me daria o prazer de ter sua companhia em um passeio despretensioso acompanhado talvez de uma bebida, uma comida japonesa ou quem sabe um pastel de camarão com uma trilha sonora de uma banda, um cover ou o que lhe for mais agradável aos ouvidos?</p>
+                <div class="button-container">
+                    <button id="yes-btn" class="invite-btn">SIM</button>
+                    <button id="no-btn" class="invite-btn">Hoje não, faró</button>
                 </div>
             </div>
         </section>
@@ -88,6 +97,22 @@ Quando é que foi ficar.. tão linda?</blockquote>
     <audio id="audio-martinho" src="audio/martinho.mp3" preload="metadata"></audio>
     <audio id="audio-caetano" src="audio/caetano.mp3" preload="metadata"></audio>
     <audio id="audio-terno-rei" src="audio/terno-rei.mp3" preload="metadata"></audio>
+
+     <!-- Modal para o botão NÃO -->
+    <div id="apology-modal" class="modal-overlay">
+        <div class="modal-content">
+            <p>"Tudo bem, espero que não tenha causado desconforto com o convite e o possível exagero na demonstração de interesse, sou meio Cazuza como disse o Arthur."</p>
+            <button class="close-modal-btn">Fechar</button>
+        </div>
+    </div>
+    
+    <!-- NOVO Modal para o botão SIM -->
+    <div id="yes-modal" class="modal-overlay">
+        <div class="modal-content">
+            <p>O CONTATO VOCÊ JÁ TEM, SÓ IR LÁ ME DAR A BOA NOTÍCIA (>.<)</p>
+            <button class="close-modal-btn">Ok!</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
