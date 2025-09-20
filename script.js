@@ -7,17 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const playPauseBtns = document.querySelectorAll('.play-pause-btn');
     const audioElements = document.querySelectorAll('audio');
     
-    // Elementos do convite
     const yesBtn = document.getElementById('yes-btn');
     const noBtn = document.getElementById('no-btn');
-    const buttonContainer = document.querySelector('.button-container');
+    const inviteContent = document.querySelector('.invite-content');
     
-    // Modais
     const apologyModal = document.getElementById('apology-modal');
     const yesModal = document.getElementById('yes-modal');
     const closeModalBtns = document.querySelectorAll('.close-modal-btn');
 
-    // --- 2. Função de Digitação ---
+    // --- 2. Função de Digitação (sem alterações) ---
     const typewriter = (element, speed = 50) => {
         return new Promise(resolve => {
             const text = element.textContent;
@@ -38,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
     
-    // --- 3. Sequência de Animação Inicial ---
+    // --- 3. Sequência de Animação Inicial (sem alterações) ---
     const startIntroAnimation = async () => {
         const introText = "É curioso como certos acontecimentos fazem florescer pensamentos que escapam a qualquer controle. Imaginamos conduzir a vida, mas na verdade somos conduzidos; e, sem aviso ou palavra alguma, há pessoas que despertam em nós um fascínio que por vezes não conseguimos ou podemos ignorar, como Dostoiévski já nos alertava...";
         initialMessageEl.textContent = introText;
@@ -47,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollPromptEl.classList.add('visible');
     };
 
-    // --- 4. Lógica de Áudio ---
+    // --- 4. Lógica de Áudio (sem alterações) ---
     const pauseAllAudio = () => {
         audioElements.forEach(audio => audio.pause());
         playPauseBtns.forEach(btn => btn.classList.remove('playing'));
@@ -74,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 5. Lógica de Scroll e Animações ---
+    // --- 5. Lógica de Scroll e Animações (sem alterações) ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             const quoteEl = entry.target.querySelector('.typewriter');
@@ -99,19 +97,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     musicSections.forEach(section => observer.observe(section));
 
-    // --- 6. Lógica para o Convite Interativo ---
+    // --- 6. Lógica para o Convite Interativo (CORRIGIDO) ---
     let noClickCount = 0;
 
     const moveNoButton = () => {
-        const containerRect = buttonContainer.getBoundingClientRect();
-        const btnRect = noBtn.getBoundingClientRect();
-        
-        const maxX = containerRect.width - btnRect.width;
-        const maxY = containerRect.height - btnRect.height;
-
-        const randomX = Math.random() * maxX;
-        const randomY = Math.random() * maxY;
-
+        const containerWidth = inviteContent.offsetWidth;
+        const containerHeight = inviteContent.offsetHeight;
+        const btnWidth = noBtn.offsetWidth;
+        const btnHeight = noBtn.offsetHeight;
+        const maxX = containerWidth - btnWidth;
+        const maxY = containerHeight - btnHeight;
+        const randomX = Math.max(0, Math.floor(Math.random() * maxX));
+        const randomY = Math.max(0, Math.floor(Math.random() * maxY));
         noBtn.style.left = `${randomX}px`;
         noBtn.style.top = `${randomY}px`;
     };
@@ -132,7 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (noClickCount >= 3) {
             apologyModal.classList.add('visible');
         }
-        moveNoButton();
+        // A LINHA ABAIXO FOI REMOVIDA PARA CORRIGIR O BUG
+        // moveNoButton(); 
     });
 
     yesBtn.addEventListener('click', () => {

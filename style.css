@@ -49,8 +49,8 @@ blockquote { font-family: 'Lora', serif; font-style: italic; font-size: 2em; mar
 /* Seção de Convite */
 .invite-section { background: linear-gradient(175deg, #2c1a4d, #1a1a1a); flex-direction: column; text-align: center; }
 .invite-content { max-width: 800px; position: relative; padding: 20px; }
-.invite-text { font-family: 'Lora', serif; font-size: 2.2em; line-height: 1.6; margin-bottom: 50px; }
-.button-container { display: flex; justify-content: center; gap: 30px; align-items: center; position: relative; height: 100px; width: 100%; }
+.invite-text { font-family: 'Poppins', sans-serif;font-weight: 400; font-size: 1.8em; line-height: 1.9; margin-bottom: 50px;width: 100%; }
+.button-container { display: flex; justify-content: center; gap: 30px; align-items: center; width: 100%; }
 .invite-btn { padding: 15px 40px; font-size: 1.2em; font-weight: bold; border: none; border-radius: 50px; cursor: pointer; transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease; }
 .invite-btn:hover { transform: scale(1.05); }
 #yes-btn { background-color: #1DB954; color: white; }
